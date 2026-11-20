@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MapleSprout Daycare | Early Learning Centre in Maple Ridge, BC</title>
+<meta name="description" content="MapleSprout Daycare is a Reggio Emilia–inspired early learning centre in Maple Ridge, BC. Now enrolling for Infant & Toddler and 3-5 programs. Open Monday–Friday, 7:30 AM–6:00 PM.">
+<link rel="icon" type="image/png" href="images/logo.png">
+<meta property="og:title" content="MapleSprout Daycare — Maple Ridge, BC">
+<meta property="og:description" content="Where little sprouts grow into confident learners. Now enrolling for Infant & Toddler and 3-5 programs.">
+<meta property="og:image" content="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f5f5e6; --paper:#fbfaf2; --sage:#6f8f4e; --sage-dark:#4f6b37; --sage-soft:#e4ebd5;
+  --maple:#e07b2e; --maple-dark:#c4621a; --maple-soft:#fbe6d3; --sky:#5b86b0; --sky-soft:#e2ecf5;
+  --bark:#4a2e1f; --ink:#3b3127; --muted:#6e6458; --line:#e5e1cf;
+  --radius:22px; --shadow:0 10px 30px rgba(74,46,31,.08);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{font-family:"Nunito",system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.7;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--sage-dark)}
+h1,h2,h3{font-family:"Fredoka",ui-rounded,"Nunito",system-ui,sans-serif;color:var(--bark);line-height:1.2;font-weight:600}
+h2{font-size:clamp(1.8rem,4vw,2.5rem);margin-bottom:.6em}
+h3{font-size:1.3rem;margin-bottom:.4em}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+section{padding:88px 0}
+.eyebrow{display:inline-block;font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:600;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--maple-dark);margin-bottom:.8em}
+.lead{font-size:1.15rem;color:var(--muted);max-width:720px}
+.btn{display:inline-flex;align-items:center;gap:.5em;font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:600;font-size:1.05rem;text-decoration:none;padding:.85em 1.6em;border-radius:999px;transition:transform .15s,background .15s,box-shadow .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:var(--maple);color:#fff;box-shadow:0 6px 18px rgba(224,123,46,.35)}
+.btn-primary:hover{background:var(--maple-dark)}
+.btn-ghost{background:#fff;color:var(--sage-dark);border:2px solid var(--sage)}
+.btn-ghost:hover{background:var(--sage-soft)}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:rgba(245,245,230,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none}
+.brand img{width:56px;height:auto}
+.brand span{font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:700;font-size:1.45rem;color:var(--bark);line-height:1}
+.brand span em{font-style:normal;color:var(--sage)}
+.brand small{display:block;font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:500;font-size:.8rem;color:var(--maple-dark);letter-spacing:.12em;text-transform:uppercase;margin-top:3px}
+.menu{display:flex;align-items:center;gap:26px;list-style:none}
+.menu a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.98rem}
+.menu a:hover{color:var(--maple-dark)}
+.menu .btn{padding:.55em 1.2em;font-size:.95rem;color:#fff}
+.burger{display:none;background:none;border:0;cursor:pointer;padding:8px}
+.burger span{display:block;width:26px;height:3px;background:var(--bark);border-radius:2px;margin:5px 0;transition:.2s}
+
+/* hero */
+.hero{background:var(--cream);padding:72px 0 96px;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+.badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:.4em 1em;font-weight:700;font-size:.9rem;color:var(--sage-dark);margin-bottom:1.2em}
+.badge i{width:9px;height:9px;border-radius:50%;background:var(--maple);box-shadow:0 0 0 4px var(--maple-soft)}
+.hero h1{font-size:clamp(2.3rem,5.4vw,3.7rem);margin-bottom:.35em}
+.hero h1 .hl{color:var(--sage)}
+.hero p.sub{font-size:1.2rem;color:var(--muted);margin-bottom:1.8em}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.hero-art{position:relative;display:flex;justify-content:center}
+.hero-art .blob{width:100%;max-width:400px;aspect-ratio:1;border-radius:46% 54% 52% 48%/55% 45% 55% 45%;background:radial-gradient(circle at 30% 30%,#fff 0,var(--sage-soft) 70%);display:flex;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.hero-art .blob img{width:66%}
+.float{position:absolute;background:#fff;border-radius:16px;padding:.6em 1em;font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:600;box-shadow:var(--shadow);font-size:.95rem}
+.float.f1{top:10%;left:-4%;color:var(--maple-dark)}
+.float.f2{bottom:8%;right:-4%;color:var(--sky)}
+.hero-quote{margin-top:56px;background:#fff;border-left:5px solid var(--maple);border-radius:0 var(--radius) var(--radius) 0;padding:22px 28px;box-shadow:var(--shadow);max-width:760px}
+.hero-quote p{font-style:italic;font-size:1.1rem;color:var(--bark)}
+.hero-quote cite{display:block;margin-top:.4em;font-style:normal;font-size:.92rem;color:var(--muted)}
+.hero-photo{width:100%;max-width:400px;aspect-ratio:3/4;border-radius:32px;overflow:hidden;border:8px solid #fff;box-shadow:0 18px 40px rgba(74,46,31,.16);transform:rotate(1.5deg)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.prog-img{height:240px;overflow:hidden}.prog-img img{width:100%;height:100%;object-fit:cover}
+.card-img{margin:-36px -36px 24px;height:260px;overflow:hidden;border-radius:var(--radius) var(--radius) 0 0}.card-img img{width:100%;height:100%;object-fit:cover}
+/* gallery */
+.gallery{background:var(--paper)}
+.g-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:36px}
+.g-item{border:0;padding:0;cursor:zoom-in;border-radius:18px;overflow:hidden;aspect-ratio:3/4;background:var(--sage-soft);display:block}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.g-item:hover img{transform:scale(1.05)}
+.lb{position:fixed;inset:0;background:rgba(30,22,16,.92);display:none;align-items:center;justify-content:center;z-index:100;padding:24px}
+.lb.open{display:flex}
+.lb img{max-width:100%;max-height:88vh;border-radius:14px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.lb button{position:absolute;background:rgba(255,255,255,.15);color:#fff;border:0;width:52px;height:52px;border-radius:50%;font-size:1.6rem;cursor:pointer}
+.lb button:hover{background:rgba(255,255,255,.3)}
+.lb .close{top:18px;right:18px}.lb .prev{left:18px;top:50%;transform:translateY(-50%)}.lb .next{right:18px;top:50%;transform:translateY(-50%)}
+.lb .count{position:absolute;bottom:18px;left:0;right:0;text-align:center;color:#ddd;font-size:.9rem}
+
+/* two-col cards */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow)}
+.icon{width:58px;height:58px;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.7rem;margin-bottom:18px}
+.i-maple{background:var(--maple-soft)} .i-sage{background:var(--sage-soft)} .i-sky{background:var(--sky-soft)}
+
+/* philosophy */
+.philosophy{background:var(--sage);color:#fff;position:relative;overflow:hidden}
+.philosophy h2,.philosophy .eyebrow{color:#fff}
+.philosophy .eyebrow{opacity:.85}
+.philo-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+blockquote.big{font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:500;font-size:clamp(1.35rem,2.6vw,1.75rem);line-height:1.45;position:relative;padding-left:28px;border-left:4px solid var(--maple)}
+blockquote.big cite{display:block;font-family:"Nunito",system-ui,sans-serif;font-style:normal;font-size:.95rem;opacity:.85;margin-top:1em}
+.philosophy p{color:#f3f6ec}
+
+/* features */
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.feature{background:#fff;border-radius:var(--radius);padding:30px;border:1px solid var(--line)}
+.feature p{color:var(--muted);font-size:.98rem}
+.third{background:var(--maple-soft);color:var(--maple-dark);font-weight:700;padding:.05em .4em;border-radius:6px}
+
+/* programs */
+.programs{background:var(--cream)}
+.prog-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:40px}
+.prog{background:#fff;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.prog-head{padding:30px 34px 24px}
+.prog.it .prog-head{background:linear-gradient(135deg,var(--sky-soft),#fff)}
+.prog.ps .prog-head{background:linear-gradient(135deg,var(--maple-soft),#fff)}
+.prog-tag{display:inline-block;font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-weight:600;font-size:.82rem;padding:.25em .9em;border-radius:999px;background:#fff;margin-bottom:12px}
+.prog.it .prog-tag{color:var(--sky)} .prog.ps .prog-tag{color:var(--maple-dark)}
+.prog-head h3{font-size:1.55rem}
+.prog-head .focus{font-style:italic;color:var(--muted);font-size:.98rem}
+.prog-body{padding:8px 34px 34px}
+.prog-body > p{margin-bottom:1.2em}
+.prog-body ul{list-style:none;display:grid;gap:16px}
+.prog-body li{padding-left:34px;position:relative}
+.prog-body li::before{content:"";position:absolute;left:0;top:6px;width:20px;height:20px;border-radius:50%;background:var(--sage-soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5.5 10.5l3 3 6-7' fill='none' stroke='%234f6b37' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/16px no-repeat}
+.prog-body li b{color:var(--bark)}
+
+/* hours */
+.hours-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:28px;align-items:stretch}
+.hours-card{background:var(--bark);color:#fff;border-radius:var(--radius);padding:40px;display:flex;flex-direction:column;justify-content:center}
+.hours-card h3{color:#fff;font-size:1.1rem;opacity:.85;font-weight:500}
+.hours-card .days{font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-size:2rem;font-weight:600;margin:.2em 0 0}
+.hours-card .time{white-space:nowrap;font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-size:clamp(1.8rem,3.4vw,2.4rem);font-weight:700;color:#ffb877;line-height:1.1}
+
+/* open house */
+.openhouse{background:linear-gradient(180deg,var(--paper),var(--sage-soft))}
+.oh-box{background:#fff;border-radius:32px;padding:48px;box-shadow:var(--shadow);display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;border:2px dashed var(--sage)}
+.dates{display:flex;gap:16px;flex-wrap:wrap}
+.date{background:var(--maple);color:#fff;border-radius:20px;width:110px;text-align:center;padding:14px 0;box-shadow:0 6px 16px rgba(224,123,46,.3)}
+.date .m{font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-size:.85rem;letter-spacing:.12em;text-transform:uppercase;opacity:.9}
+.date .d{font-family:"Fredoka",ui-rounded,system-ui,sans-serif;font-size:2.6rem;font-weight:700;line-height:1}
+.date .w{font-size:.82rem;opacity:.9}
+.oh-meta{margin-top:22px;display:grid;gap:8px;font-weight:600}
+.oh-meta div{display:flex;gap:10px;align-items:center}
+
+/* contact */
+.contact{background:var(--cream)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.info-list{list-style:none;display:grid;gap:14px;margin:28px 0 32px}
+.info-list li{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 18px}
+.info-list .ic{width:42px;height:42px;flex:none;border-radius:12px;display:flex;align-items:center;justify-content:center;background:var(--sage-soft)}
+.info-list small{display:block;font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.info-list a{text-decoration:none;color:var(--bark);font-weight:700}
+.poster{border-radius:24px;overflow:hidden;box-shadow:var(--shadow);border:6px solid #fff;max-width:440px;margin-left:auto}
+.map{margin-top:20px;border-radius:16px;overflow:hidden;border:1px solid var(--line)}
+
+footer{background:var(--bark);color:#e9dfd3;padding:40px 0;font-size:.95rem}
+.foot{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;align-items:center}
+footer a{color:#ffb877;text-decoration:none}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+
+@media (max-width:900px){
+  section{padding:64px 0}
+  .hero-grid,.split,.philo-grid,.prog-grid,.hours-grid,.oh-box,.contact-grid{grid-template-columns:1fr}
+  .features{grid-template-columns:1fr}
+  .hero-art{order:-1}.hero-photo{max-width:300px;aspect-ratio:4/3.4}
+  .g-grid{grid-template-columns:repeat(2,1fr);gap:10px}
+  .prog-img{height:200px}
+  .oh-box{padding:32px 24px}
+  .poster{margin:0 auto}
+  .burger{display:block}
+  .menu{position:absolute;top:76px;left:0;right:0;background:var(--cream);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 20px;border-bottom:1px solid var(--line);display:none}
+  .menu.open{display:flex}
+  .menu li a{display:block;padding:12px 0;border-bottom:1px solid var(--line)}
+  .menu li:last-child a{border:0;margin-top:12px;text-align:center;justify-content:center}
+  .float{display:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav" aria-label="Main">
+    <a href="#top" class="brand" aria-label="MapleSprout Daycare home">
+      <img src="images/logo.png" alt="MapleSprout Daycare logo">
+      <div><span>Maple<em>Sprout</em></span><small>Daycare</small></div>
+    </a>
+    <button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <ul class="menu" id="menu">
+      <li><a href="#about">About</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#programs">Programs</a></li>
+      <li><a href="#hours">Hours</a></li>
+      <li><a href="#open-house">Open House</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a class="btn btn-primary" href="https://app.lillio.com/online_registration/apply/maplesprout" target="_blank" rel="noopener">Enroll Now</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="top">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="badge"><i></i>Now Enrolling · Infant &amp; Toddler and 3-5 Programs</div>
+        <h1>Where little sprouts grow into <span class="hl">confident learners.</span></h1>
+        <p class="sub">A Reggio Emilia–inspired early learning centre in the heart of Maple Ridge, BC.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="https://app.lillio.com/online_registration/apply/maplesprout" target="_blank" rel="noopener">Book a Tour</a>
+          <a class="btn btn-ghost" href="#programs">Explore Programs</a>
+        </div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo"><img src="images/room-10.jpg" alt="Bright MapleSprout classroom with wooden shelves, learning materials and alphabet cards"></div>
+        <div class="float f1">🍁 Maple Ridge, BC</div>
+        <div class="float f2">☀️ Mon–Fri · 7:30–6:00</div>
+      </div>
+    </div>
+    <div class="hero-quote reveal">
+      <p>“Children are strong, capable in their uniqueness, and full of potential.”</p>
+      <cite>— The British Columbia Early Learning Framework</cite>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <span class="eyebrow">About Us</span>
+    <h2>Welcome to a World of Wonder</h2>
+    <div class="split" style="margin-top:28px">
+      <div class="card reveal">
+        <div class="card-img"><img src="images/room-01-sm.jpg" alt="Infant and toddler room with round tables and a family photo tree"></div>
+        <h3>✨ A Place Where Ideas Are Celebrated</h3>
+        <p>Welcome to MapleSprout Daycare, a deeply nurturing early learning center located in the heart of Maple Ridge. Imagine a place where your child’s ideas are celebrated, their curiosity is nurtured, and their daily discoveries are treated like magic. That is the environment we strive to create every single day—a safe, welcoming place where children feel confident to grow and discover the world at their own beautiful pace.</p>
+      </div>
+      <div class="card reveal">
+        <div class="card-img"><img src="images/room-08-sm.jpg" alt="Spacious classroom with wooden tables and a tree mural"></div>
+        <h3>🏡 A Cozy Space for Early Learning</h3>
+        <p>Step into a beautiful, bright space where your child can truly thrive! We provide a warm, nurturing environment filled with high-quality toys and natural light, making it the perfect place for your little ones to explore, learn, and play every single day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHILOSOPHY -->
+<section class="philosophy" id="philosophy">
+  <div class="wrap philo-grid">
+    <div class="reveal">
+      <span class="eyebrow">🌱 Our Philosophy</span>
+      <h2>Nurturing the “Hundred Languages”</h2>
+      <blockquote class="big">“The child has a hundred languages, a hundred hands, a hundred thoughts, a hundred ways of thinking, of playing, of speaking.”
+        <cite>— Loris Malaguzzi, Founder of the Reggio Emilia Approach</cite>
+      </blockquote>
+    </div>
+    <div class="reveal">
+      <p>Our curriculum is deeply inspired by the Reggio Emilia philosophy and guided by the BC Early Learning Framework. We don’t just teach children; we learn <em>alongside</em> them.</p>
+      <p style="margin-top:1em">By observing and listening to the children, our educators create an “emergent curriculum” that follows their natural interests. Whether they are fascinated by a rainstorm or building a city out of blocks, we turn their everyday curiosities into meaningful projects.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ENVIRONMENT + FAMILIES -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Our Approach</span>
+    <h2>Spaces &amp; Partnerships That Inspire</h2>
+    <div class="features">
+      <div class="feature reveal">
+        <div class="icon i-maple">☀️</div>
+        <h3>Environments that Inspire</h3>
+        <p>In the Reggio approach, the environment is known as the <span class="third">“Third Teacher.”</span> Step into our light-filled, beautifully organized daycare and you will see why! Our indoor and outdoor classrooms are carefully designed to spark joy and invite safe, meaningful exploration.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="icon i-sage">🧺</div>
+        <h3>Open-Ended Materials</h3>
+        <p>Equipped with high-quality, open-ended toys, natural materials, and loose parts, our spaces encourage children to collaborate, problem-solve, and build a strong connection to nature.</p>
+      </div>
+      <div class="feature reveal">
+        <div class="icon i-sky">🤝</div>
+        <h3>Partnering with Families</h3>
+        <p>At MapleSprout, you are not just dropping your child off—you are joining a community. We actively document your child’s learning journey through photos and observations, ensuring you never miss the wonderful cognitive leaps they make each day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <span class="eyebrow">📸 Take a Peek Inside</span>
+    <h2>Our Bright, Beautiful Spaces</h2>
+    <p class="lead">Light-filled rooms, natural wooden furniture and thoughtfully chosen materials — come see them in person!</p>
+    <div class="g-grid">
+      <button class="g-item" data-i="0" aria-label="View photo: Infant & toddler room with family photo tree"><img src="images/room-01-sm.jpg" alt="Infant & toddler room with family photo tree" loading="lazy"></button>
+      <button class="g-item" data-i="1" aria-label="View photo: Shelves of toys and a soft play ship"><img src="images/room-02-sm.jpg" alt="Shelves of toys and a soft play ship" loading="lazy"></button>
+      <button class="g-item" data-i="2" aria-label="View photo: Reading corner with nature-themed wall"><img src="images/room-03-sm.jpg" alt="Reading corner with nature-themed wall" loading="lazy"></button>
+      <button class="g-item" data-i="3" aria-label="View photo: Soft play ship climbing area"><img src="images/room-04-sm.jpg" alt="Soft play ship climbing area" loading="lazy"></button>
+      <button class="g-item" data-i="4" aria-label="View photo: Home corner with play kitchen"><img src="images/room-05-sm.jpg" alt="Home corner with play kitchen" loading="lazy"></button>
+      <button class="g-item" data-i="5" aria-label="View photo: Crayon soft play area and play kitchen"><img src="images/room-06-sm.jpg" alt="Crayon soft play area and play kitchen" loading="lazy"></button>
+      <button class="g-item" data-i="6" aria-label="View photo: Dramatic play house and train shelf"><img src="images/room-07-sm.jpg" alt="Dramatic play house and train shelf" loading="lazy"></button>
+      <button class="g-item" data-i="7" aria-label="View photo: Spacious classroom with tables and tree mural"><img src="images/room-08-sm.jpg" alt="Spacious classroom with tables and tree mural" loading="lazy"></button>
+      <button class="g-item" data-i="8" aria-label="View photo: Long shelves of open-ended materials"><img src="images/room-09-sm.jpg" alt="Long shelves of open-ended materials" loading="lazy"></button>
+      <button class="g-item" data-i="9" aria-label="View photo: Learning materials, globe and busy board"><img src="images/room-10-sm.jpg" alt="Learning materials, globe and busy board" loading="lazy"></button>
+      <button class="g-item" data-i="10" aria-label="View photo: Classroom tables and creative shelves"><img src="images/room-11-sm.jpg" alt="Classroom tables and creative shelves" loading="lazy"></button>
+      <button class="g-item" data-i="11" aria-label="View photo: Dinosaur and sorting activities"><img src="images/room-12-sm.jpg" alt="Dinosaur and sorting activities" loading="lazy"></button>
+    </div>
+  </div>
+</section>
+
+<div class="lb" role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <button class="close" aria-label="Close">×</button>
+  <button class="prev" aria-label="Previous photo">‹</button>
+  <img alt="">
+  <button class="next" aria-label="Next photo">›</button>
+  <div class="count"></div>
+</div>
+
+<!-- PROGRAMS -->
+<section class="programs" id="programs">
+  <div class="wrap">
+    <span class="eyebrow">🎒 Our Programs</span>
+    <h2>Programs for Every Stage</h2>
+    <p class="lead">We are currently enrolling for our Infant/Toddler and 3-5 programs.</p>
+    <div class="prog-grid">
+      <article class="prog it reveal">
+        <div class="prog-img"><img src="images/room-04-sm.jpg" alt="Soft play climbing structure for infants and toddlers"></div>
+        <div class="prog-head">
+          <span class="prog-tag">🍼 Infant &amp; Toddler (I.T.)</span>
+          <h3>Nurturing First Steps</h3>
+          <p class="focus">Focusing on Well-being &amp; Belonging</p>
+        </div>
+        <div class="prog-body">
+          <p>Your child’s first experiences away from home should feel like an extension of your family. In our I.T. program, we focus on creating a deeply nurturing and responsive environment.</p>
+          <ul>
+            <li><b>A Calming Space:</b> We use soft lighting, cozy corners, and safe, open spaces that encourage crawlers and early walkers to explore with confidence.</li>
+            <li><b>Respecting the Capable Child:</b> We pay close attention to your child’s non-verbal cues and provide tactile materials (like fabric, wood, and water) that allow them to safely investigate the world using all their senses.</li>
+            <li><b>Gentle Rhythms:</b> We follow a gentle rhythm that respects your toddler’s natural needs for rest, nourishment, and active play.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="prog ps reveal">
+        <div class="prog-img"><img src="images/room-12-sm.jpg" alt="Learning shelf with dinosaurs, puzzles and colourful materials"></div>
+        <div class="prog-head">
+          <span class="prog-tag">🎨 3-5 Program</span>
+          <h3>Fostering Creative Minds</h3>
+          <p class="focus">Focusing on Exploration, Creativity &amp; Social Responsibility</p>
+        </div>
+        <div class="prog-body">
+          <p>As children grow, their natural curiosity expands into active inquiry and collaborative play. We guide children as they navigate friendships, express complex ideas, and view themselves as active members of their community.</p>
+          <ul>
+            <li><b>Project-Based Learning:</b> Instead of pre-planned worksheets, our curriculum emerges from what the children <em>want</em> to know, making learning deeply engaging.</li>
+            <li><b>Endless Expression:</b> We provide a rich variety of open-ended materials—paint, wire, light tables, and clay—ensuring children have endless ways to express their understanding of the world.</li>
+            <li><b>Making Learning Visible:</b> We carefully document their conversations and artwork, keeping you connected to their daily triumphs.</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- HOURS -->
+<section id="hours">
+  <div class="wrap">
+    <span class="eyebrow">🍎 Hours &amp; Nourishment</span>
+    <h2>We Take Care of the Details</h2>
+    <div class="hours-grid" style="margin-top:28px">
+      <div class="hours-card reveal">
+        <h3>Hours of Operation</h3>
+        <div class="days">Monday – Friday</div>
+        <div class="time">7:30 AM – 6:00 PM</div>
+      </div>
+      <div class="card reveal">
+        <div class="icon i-sage">🥗</div>
+        <h3>Healthy Lunch Included</h3>
+        <p>We take care of the details, so your child can focus on playing! We believe that good nutrition is the foundation for a great day of learning. That is why we provide a <b>high-quality, nutritious lunch</b> through our trusted outside catering partner. You never have to worry about packing meals—your child will enjoy healthy, delicious food that fuels their growing minds and bodies every single day.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN HOUSE -->
+<section class="openhouse" id="open-house">
+  <div class="wrap">
+    <div class="oh-box reveal">
+      <div>
+        <span class="eyebrow">🗓️ Let’s Get to Know Each Other!</span>
+        <h2>Join Our Saturday Open House</h2>
+        <p>Looking for the perfect childcare fit for your family? Bring your child, come play, and see our beautiful spaces firsthand at our upcoming Open Houses!</p>
+        <div class="oh-meta">
+          <div>🕙 10:00 AM – 2:00 PM</div>
+          <div>📍 11641 224th St, Maple Ridge</div>
+        </div>
+      </div>
+      <div>
+        <div class="dates">
+          <div class="date"><div class="m">Dec</div><div class="d">12</div><div class="w">Saturday</div></div>
+          <div class="date" style="background:var(--sage);box-shadow:0 6px 16px rgba(111,143,78,.3)"><div class="m">Dec</div><div class="d">19</div><div class="w">Saturday</div></div>
+        </div>
+        <a class="btn btn-primary" style="margin-top:26px" href="https://app.lillio.com/online_registration/apply/maplesprout" target="_blank" rel="noopener">Reserve a Visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="reveal">
+      <span class="eyebrow">📍 Your Child’s Journey Starts Here</span>
+      <h2>Ready to secure your spot or book a private tour?</h2>
+      <p class="lead">We are currently enrolling for our Infant/Toddler and 3-5 programs! Our doors are always open for you to discover the MapleSprout difference.</p>
+      <ul class="info-list">
+        <li><span class="ic">📍</span><div><small>Address</small><a href="https://maps.google.com/?q=11641+224th+St,+Maple+Ridge,+BC" target="_blank" rel="noopener">11641 224th St, Maple Ridge, BC</a></div></li>
+        <li><span class="ic">📞</span><div><small>Phone</small><a href="tel:+17789199899">778-919-9899</a></div></li>
+        <li><span class="ic">✉️</span><div><small>Email</small><a href="mailto:info@maplesprout.org">info@maplesprout.org</a></div></li>
+      </ul>
+      <a class="btn btn-primary" href="https://app.lillio.com/online_registration/apply/maplesprout" target="_blank" rel="noopener">Book Your Tour &amp; Join the MapleSprout Family →</a>
+    </div>
+    <div class="reveal">
+      <div class="poster"><img src="images/connect-poster.jpg" alt="Connect with MapleSprout Daycare: QR codes to book a tour and follow us on Instagram and Facebook"></div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <div>© <span id="yr">2026</span> MapleSprout Daycare · Maple Ridge, BC</div>
+    <div><a href="tel:+17789199899">778-919-9899</a> · <a href="mailto:info@maplesprout.org">info@maplesprout.org</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var b=document.querySelector('.burger'),m=document.getElementById('menu');
+  b.addEventListener('click',function(){var o=m.classList.toggle('open');b.setAttribute('aria-expanded',o)});
+  m.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){m.classList.remove('open');b.setAttribute('aria-expanded',false)})});
+  document.getElementById('yr').textContent=new Date().getFullYear();
+  var lb=document.querySelector('.lb'),li=lb.querySelector('img'),lc=lb.querySelector('.count'),gi=[].slice.call(document.querySelectorAll('.g-item')),cur=0;
+  function show(i){cur=(i+gi.length)%gi.length;var t=gi[cur].querySelector('img');li.src=t.src.replace('-sm.jpg','.jpg');li.alt=t.alt;lc.textContent=(cur+1)+' / '+gi.length}
+  gi.forEach(function(g,i){g.addEventListener('click',function(){show(i);lb.classList.add('open');document.body.style.overflow='hidden'})});
+  function close(){lb.classList.remove('open');document.body.style.overflow=''}
+  lb.querySelector('.close').onclick=close;lb.querySelector('.prev').onclick=function(){show(cur-1)};lb.querySelector('.next').onclick=function(){show(cur+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+  var els=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+    els.forEach(function(e){io.observe(e)});
+  } else els.forEach(function(e){e.classList.add('in')});
+})();
+</script>
+</body>
+</html>
